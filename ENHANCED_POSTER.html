@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rise of Islamic Philosophy & Its Spread to South Asia</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Amiri:wght@400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lora', Georgia, serif;
+            background: linear-gradient(135deg, #0a1628 0%, #1a2744 50%, #0d1929 100%);
+            color: #f5f0e6;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        @media print {
+            body { background: white; }
+            .poster-container { box-shadow: none; }
+        }
+        
+        /* Main Poster Container */
+        .poster-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 30px;
+            background: linear-gradient(180deg, 
+                rgba(26, 39, 68, 0.95) 0%, 
+                rgba(13, 25, 41, 0.98) 100%);
+        }
+        
+        /* Header Section */
+        .poster-header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, 
+                rgba(212, 168, 75, 0.15) 0%, 
+                rgba(0, 128, 128, 0.1) 100%);
+            border: 3px solid;
+            border-image: linear-gradient(90deg, #d4a84b, #008080, #d4a84b) 1;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .poster-header::before {
+            content: "۝";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 30px;
+            color: #d4a84b;
+            background: #1a2744;
+            padding: 0 20px;
+        }
+        
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2em;
+            font-weight: 700;
+            color: #d4a84b;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-family: 'Amiri', serif;
+            font-size: 1.6em;
+            color: #7ec8c8;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .arabic-title {
+            font-family: 'Amiri', serif;
+            font-size: 2em;
+            color: #d4a84b;
+            direction: rtl;
+            margin-bottom: 20px;
+        }
+        
+        .course-info {
+            font-size: 1em;
+            color: #a0b4c8;
+            border-top: 1px solid rgba(212, 168, 75, 0.3);
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+        
+        /* Three Column Layout */
+        .main-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        /* Column Styling */
+        .column {
+            background: rgba(15, 25, 45, 0.7);
+            border-radius: 12px;
+            padding: 25px;
+            border: 2px solid rgba(212, 168, 75, 0.3);
+            position: relative;
+        }
+        
+        .column-roots {
+            border-top: 4px solid #d4a84b;
+        }
+        
+        .column-journey {
+            border-top: 4px solid #008080;
+        }
+        
+        .column-fruit {
+            border-top: 4px solid #cd853f;
+        }
+        
+        .column-header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .column-number {
+            font-size: 3em;
+            font-weight: 700;
+            opacity: 0.3;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .column-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+        
+        .column-roots .column-title { color: #d4a84b; }
+        .column-journey .column-title { color: #7ec8c8; }
+        .column-fruit .column-title { color: #cd853f; }
+        
+        .column-subtitle {
+            font-size: 0.95em;
+            color: #a0b4c8;
+            font-style: italic;
+        }
+        
+        /* Section Cards */
+        .section-card {
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            padding: 18px;
+            margin-bottom: 18px;
+            border-left: 3px solid;
+            transition: all 0.3s ease;
+        }
+        
+        .section-card:hover {
+            background: rgba(255,255,255,0.06);
+            transform: translateX(3px);
+        }
+        
+        .column-roots .section-card { border-left-color: #d4a84b; }
+        .column-journey .section-card { border-left-color: #008080; }
+        .column-fruit .section-card { border-left-color: #cd853f; }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .column-roots .section-title { color: #f0d090; }
+        .column-journey .section-title { color: #7ec8c8; }
+        .column-fruit .section-title { color: #deb887; }
+        
+        .section-content {
+            font-size: 0.9em;
+            line-height: 1.7;
+            color: #d0dce8;
+        }
+        
+        .section-content p {
+            margin-bottom: 10px;
+        }
+        
+        /* Key Facts Boxes */
+        .key-fact {
+            background: linear-gradient(135deg, rgba(212, 168, 75, 0.1) 0%, rgba(0, 128, 128, 0.05) 100%);
+            border: 1px solid rgba(212, 168, 75, 0.3);
+            border-radius: 6px;
+            padding: 12px;
+            margin: 12px 0;
+            font-size: 0.88em;
+        }
+        
+        .key-fact-title {
+            color: #d4a84b;
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 0.95em;
+        }
+        
+        /* Quote Boxes */
+        .quote-box {
+            background: rgba(0, 128, 128, 0.1);
+            border-left: 3px solid #008080;
+            padding: 12px 15px;
+            margin: 15px 0;
+            font-style: italic;
+            color: #b8d8d8;
+            font-size: 0.9em;
+        }
+        
+        .quote-attribution {
+            text-align: right;
+            color: #7ec8c8;
+            font-size: 0.85em;
+            margin-top: 8px;
+        }
+        
+        /* Timeline Items */
+        .timeline-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+            padding-left: 10px;
+            border-left: 2px solid rgba(126, 200, 200, 0.3);
+        }
+        
+        .timeline-date {
+            color: #d4a84b;
+            font-weight: 600;
+            min-width: 70px;
+            font-size: 0.9em;
+        }
+        
+        .timeline-event {
+            color: #d0dce8;
+            font-size: 0.88em;
+        }
+        
+        /* Scholar Cards */
+        .scholar-card {
+            display: flex;
+            gap: 12px;
+            background: rgba(212, 168, 75, 0.05);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .scholar-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #d4a84b 0%, #c9973b 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            flex-shrink: 0;
+        }
+        
+        .scholar-info h4 {
+            color: #f0d090;
+            font-size: 0.95em;
+            margin-bottom: 3px;
+        }
+        
+        .scholar-info p {
+            font-size: 0.82em;
+            color: #a0b4c8;
+        }
+        
+        /* Image Placeholders with Real Images */
+        .image-frame {
+            background: linear-gradient(135deg, rgba(26, 39, 68, 0.9) 0%, rgba(13, 25, 41, 0.95) 100%);
+            border: 2px solid rgba(212, 168, 75, 0.4);
+            border-radius: 8px;
+            padding: 8px;
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        .image-frame img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            max-height: 180px;
+            object-fit: cover;
+        }
+        
+        .image-caption {
+            font-size: 0.8em;
+            color: #a0b4c8;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .stat-item {
+            background: rgba(0, 128, 128, 0.1);
+            border-radius: 6px;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #7ec8c8;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .stat-label {
+            font-size: 0.75em;
+            color: #a0b4c8;
+        }
+        
+        /* Bottom Section - Beyond Class Materials */
+        .beyond-section {
+            background: linear-gradient(135deg, rgba(205, 133, 63, 0.1) 0%, rgba(212, 168, 75, 0.05) 100%);
+            border: 2px solid rgba(205, 133, 63, 0.3);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .beyond-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6em;
+            color: #cd853f;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .beyond-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .beyond-card {
+            background: rgba(15, 25, 45, 0.6);
+            border-radius: 8px;
+            padding: 18px;
+            border-top: 3px solid #cd853f;
+        }
+        
+        .beyond-card h4 {
+            color: #deb887;
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+        
+        .beyond-card p {
+            font-size: 0.85em;
+            color: #c0ccd8;
+            line-height: 1.6;
+        }
+        
+        /* Footer */
+        .poster-footer {
+            background: rgba(15, 25, 45, 0.8);
+            border: 2px solid rgba(212, 168, 75, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .bibliography-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3em;
+            color: #d4a84b;
+            margin-bottom: 15px;
+        }
+        
+        .bibliography-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            text-align: left;
+            font-size: 0.8em;
+            color: #a0b4c8;
+        }
+        
+        .bib-item {
+            padding: 8px;
+            background: rgba(255,255,255,0.02);
+            border-radius: 4px;
+        }
+        
+        .thesis-statement {
+            background: linear-gradient(90deg, rgba(212, 168, 75, 0.2) 0%, rgba(0, 128, 128, 0.2) 50%, rgba(205, 133, 63, 0.2) 100%);
+            border: 2px solid;
+            border-image: linear-gradient(90deg, #d4a84b, #008080, #cd853f) 1;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .thesis-text {
+            font-size: 1.1em;
+            font-style: italic;
+            color: #f5f0e6;
+            line-height: 1.8;
+        }
+        
+        /* Decorative Elements */
+        .arabesque {
+            text-align: center;
+            font-size: 1.5em;
+            color: #d4a84b;
+            margin: 20px 0;
+            opacity: 0.6;
+        }
+        
+        /* Highlight text */
+        .highlight {
+            color: #d4a84b;
+            font-weight: 600;
+        }
+        
+        .highlight-teal {
+            color: #7ec8c8;
+            font-weight: 600;
+        }
+        
+        /* Lists */
+        ul.custom-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        ul.custom-list li {
+            padding: 5px 0 5px 20px;
+            position: relative;
+            font-size: 0.88em;
+        }
+        
+        ul.custom-list li::before {
+            content: "◆";
+            position: absolute;
+            left: 0;
+            color: #d4a84b;
+            font-size: 0.7em;
+        }
+    </style>
+</head>
+<body>
+    <div class="poster-container">
+        <!-- Header -->
+        <header class="poster-header">
+            <div class="arabic-title">صعود الفلسفة الإسلامية وانتشارها في جنوب آسيا</div>
+            <h1 class="main-title">Rise of Islamic Philosophy</h1>
+            <h2 class="subtitle">& Its Spread to South Asia</h2>
+            <p class="course-info">
+                <strong>HIS 101: History of South Asia</strong> | University of Liberal Arts Bangladesh<br>
+                A Journey from Baghdad's House of Wisdom to Bengal's Sufi Shrines (8th–17th Century CE)
+            </p>
+        </header>
+
+        <!-- Thesis Statement -->
+        <div class="thesis-statement">
+            <p class="thesis-text">
+                "The transmission of Islamic philosophy from the Abbasid Caliphate to South Asia represents one of history's most significant intellectual migrations—a journey that transformed both the philosophical landscape of Islam and the cultural fabric of the Indian subcontinent through the dual channels of <span class="highlight">maritime trade networks</span> and <span class="highlight-teal">Sufi spiritual movements</span>."
+            </p>
+        </div>
+
+        <!-- Main Three Columns -->
+        <div class="main-content">
+            <!-- Column 1: The Roots -->
+            <div class="column column-roots">
+                <span class="column-number">I</span>
+                <div class="column-header">
+                    <h3 class="column-title">THE ROOTS</h3>
+                    <p class="column-subtitle">Western Context: Baghdad & the Golden Age</p>
+                </div>
+
+                <div class="section-card">
+                    <h4 class="section-title">📚 The House of Wisdom (Bayt al-Ḥikma)</h4>
+                    <div class="section-content">
+                        <p>Founded by Caliph <span class="highlight">al-Mansur</span> (r. 754–775) and transformed into a major academy under <span class="highlight">al-Ma'mun</span> (r. 813–833), the House of Wisdom became the intellectual heart of the Islamic world.</p>
+                        
+                        <div class="key-fact">
+                            <div class="key-fact-title">📜 The Translation Movement</div>
+                            Works of <span class="highlight">Aristotle, Plato, Euclid, Galen, Ptolemy</span>, and Indian scholars like <span class="highlight">Aryabhata</span> and <span class="highlight">Brahmagupta</span> were translated from Greek, Sanskrit, Persian, and Syriac into Arabic.
+                        </div>
+                        
+                        <p>The caliph al-Ma'mun reportedly dreamed of Aristotle, inspiring his sponsorship of Greek philosophy. He famously claimed <span class="highlight">Ptolemy's Almagest</span> as a condition for peace after a war with Byzantium.</p>
+                    </div>
+                </div>
+
+                <div class="section-card">
+                    <h4 class="section-title">🕌 Abbasid Political Philosophy</h4>
+                    <div class="section-content">
+                        <p>The <span class="highlight">Abbasid Revolution (750 CE)</span> was justified on religious and moral grounds—claiming the Umayyads had strayed from Islamic principles. This established the precedent of <span class="highlight">religio-political legitimacy</span>.</p>
+
+                        <div class="timeline-item">
+                            <span class="timeline-date">750 CE</span>
+                            <span class="timeline-event">Abbasid overthrow of Umayyads; capital moves to Baghdad</span>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-date">786-809</span>
+                            <span class="timeline-event">Harun al-Rashid's reign; foundation of House of Wisdom library</span>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-date">813-833</span>
+                            <span class="timeline-event">Al-Ma'mun sponsors Translation Movement; Mu'tazilism endorsed</span>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-date">1258</span>
+                            <span class="timeline-event">Mongol siege destroys Baghdad; books thrown into Tigris River</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card">
+                    <h4 class="section-title">⚖️ Key Philosophical Developments</h4>
+                    <div class="section-content">
+                        <div class="scholar-card">
+                            <div class="scholar-icon">🧠</div>
+                            <div class="scholar-info">
+                                <h4>Al-Kindi (d. 873)</h4>
+                                <p>The "Philosopher of the Arabs"—first to integrate Aristotle with Islamic theology, creating a platform for debate lasting 400+ years</p>
+                            </div>
+                        </div>
+                        
+                        <div class="scholar-card">
+                            <div class="scholar-icon">📖</div>
+                            <div class="scholar-info">
+                                <h4>Al-Khwarizmi (d. 850)</h4>
+                                <p>Father of Algebra; his name gave us the word "algorithm"; worked at the House of Wisdom</p>
+                            </div>
+                        </div>
+
+                        <div class="scholar-card">
+                            <div class="scholar-icon">🔬</div>
+                            <div class="scholar-info">
+                                <h4>Al-Jahiz (776-868)</h4>
+                                <p>Wrote <em>Kitab al-Hayawan</em> (Book of Animals); proto-evolutionary ideas about animal adaptation</p>
+                            </div>
+                        </div>
+
+                        <div class="quote-box">
+                            "Mu'tazilism supported broad-mindedness and scientific inquiry, while later caliphs endorsed literal interpretation of religious texts."
+                            <div class="quote-attribution">— On Al-Mutawakkil's Shift (847 CE)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">146+</div>
+                        <div class="stat-label">Books by Al-Biruni alone</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">116</div>
+                        <div class="stat-label">Translations by Hunayn ibn Ishaq</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Years of Golden Age</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Languages of Translation</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 2: The Journey -->
+            <div class="column column-journey">
+                <span class="column-number">II</span>
+                <div class="column-header">
+                    <h3 class="column-title">THE JOURNEY</h3>
+                    <p class="column-subtitle">Trade Routes & Transmission</p>
+                </div>
+
+                <div class="section-card">
+                    <h4 class="section-title">⚓ Indian Ocean Maritime Networks</h4>
+                    <div class="section-content">
+                        <p>Arab traders had established connections with the <span class="highlight-teal">Malabar Coast</span> of India since <span class="highlight-teal">3000 BCE</span>—long before Islam. When Islam emerged, these ancient trade networks became conduits for religious and philosophical transmission.</p>
+
+                        <div class="key-fact">
+                            <div class="key-fact-title">🕌 First Mosque in India</div>
+                            The <span class="highlight-teal">Cheraman Juma Mosque</span> in Kerala is traditionally dated to <span class="highlight">629 CE</span>—within the Prophet's lifetime—built by Arab traders, making it possibly the oldest mosque in India.
+                        </div>
+
+                        <p><span class="highlight-teal">Mappila Muslims</span> (from Malayalam "māppila" meaning "bridegroom/son-in-law") emerged from intermarriage between Arab traders and local women. They dominated the spice trade until Portuguese arrival in 1498.</p>
+                        
+                        <p>Kerala uniquely follows the <span class="highlight-teal">Shafi'i school</span> of Islamic jurisprudence—the only region in South Asia to do so—reflecting its direct connection to Arabian/Yemeni traders rather than Central Asian influences.</p>
+                    </div>
+                </div>
+
+                <div class="section-card">
+                    <h4 class="section-title">🌏 Al-Biruni: The Bridge Builder</h4>
+                    <div class="section-content">
+                        <p><span class="highlight-teal">Abu Rayhan al-Biruni</span> (973–1050), a Khwarazmian polymath, accompanied <span class="highlight-teal">Mahmud of Ghazni</span> to India in 1017. He learned Sanskrit and spent years studying Indian culture firsthand.</p>
+
+                        <div class="quote-box">
+                            "I shall place before the reader the theories of the Hindus exactly as they are, and I shall mention in connection with them similar theories of the Greeks in order to show the relationship existing between them."
+                            <div class="quote-attribution">— Al-Biruni, <em>Kitab al-Hind</em></div>
+                        </div>
+
+                        <ul class="custom-list">
+                            <li>Described Hindus as monotheistic at their educated core</li>
+                            <li>Translated <span class="highlight-teal">Yoga Sutras of Patanjali</span> into Arabic</li>
+                            <li>Calculated Earth's radius with remarkable accuracy</li>
+                            <li>Wrote 146 books across astronomy, mathematics, medicine</li>
+                            <li>Called the "Father of Indology" and "Father of Comparative Religion"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section-card">
+                    <h4 class="section-title">🗺️ The Silk Road & Land Routes</h4>
+                    <div class="section-content">
+                        <p>While maritime routes brought Islam to Kerala, <span class="highlight-teal">Central Asian land routes</span> through Afghanistan brought it to North India and Bengal through:</p>
+
+                        <ul class="custom-list">
+                            <li><span class="highlight">Ghaznavid raids</span> (11th century) - military contact</li>
+                            <li><span class="highlight">Delhi Sultanate</span> (1206-1526) - political establishment</li>
+                            <li><span class="highlight">Sufi missionaries</span> - peaceful conversion</li>
+                            <li><span class="highlight">Trade caravans</span> - commercial exchange</li>
+                        </ul>
+
+                        <div class="key-fact">
+                            <div class="key-fact-title">📊 Two Models of Transmission</div>
+                            <strong>Maritime (Kerala):</strong> Peaceful trade → intermarriage → gradual conversion; retained Shafi'i school<br><br>
+                            <strong>Overland (Bengal/North):</strong> Military conquest → Sufi preaching → mass conversion; adopted Hanafi school
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card">
+                    <h4 class="section-title">📿 Sufi Orders as Carriers</h4>
+                    <div class="section-content">
+                        <p>Sufi orders (<span class="highlight-teal">tariqas</span>) became the primary vehicle for transmitting Islamic philosophy to South Asian masses:</p>
+
+                        <div class="scholar-card">
+                            <div class="scholar-icon">🙏</div>
+                            <div class="scholar-info">
+                                <h4>Chishti Order</h4>
+                                <p>Founded in India by Moinuddin Chishti (Ajmer); emphasized love, tolerance, poverty</p>
+                            </div>
+                        </div>
+
+                        <div class="scholar-card">
+                            <div class="scholar-icon">📿</div>
+                            <div class="scholar-info">
+                                <h4>Qadiri Order</h4>
+                                <p>Influenced Mughal royalty; Dara Shikoh was a follower of Qadiri saint Mian Mir</p>
+                            </div>
+                        </div>
+
+                        <div class="scholar-card">
+                            <div class="scholar-icon">🕯️</div>
+                            <div class="scholar-info">
+                                <h4>Suhrawardiyya Order</h4>
+                                <p>Shah Jalal belonged to this order; spread Islam in Bengal and Sylhet</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 3: The Fruit -->
+            <div class="column column-fruit">
+                <span class="column-number">III</span>
+                <div class="column-header">
+                    <h3 class="column-title">THE FRUIT</h3>
+                    <p class="column-subtitle">South Asian Expressions</p>
+                </div>
+
+                <div class="section-card">
+                    <h4 class="section-title">🕌 Shah Jalal & the Conquest of Sylhet</h4>
+                    <div class="section-content">
+                        <p><span class="highlight">Hazrat Shah Jalal</span> (1271–1346), a Sufi saint of the Suhrawardiyya order, led the spiritual conquest of Sylhet in <span class="highlight">1303 CE</span> alongside military commander Sikandar Khan Ghazi.</p>
+
+                        <div class="key-fact">
+                            <div class="key-fact-title">🌟 The 360 Companions</div>
+                            Shah Jalal arrived in Bengal with <span class="highlight">360 disciples</span> (awliya), who spread across the region establishing spiritual centers. The renowned traveler <span class="highlight">Ibn Battuta</span> visited him and recorded his piety.
+                        </div>
+
+                        <p>Shah Jalal's dargah in Sylhet remains one of the most important pilgrimage sites in Bangladesh. His spiritual approach—emphasizing love and mystical experience—proved more effective than military conquest in winning converts.</p>
+
+                        <div class="quote-box">
+                            "Islam became the religion of the plough" in Bengal—spreading through Sufi-led villages that combined spiritual centers with agricultural development.
+                            <div class="quote-attribution">— Richard Eaton, Historian</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card">
+                    <h4 class="section-title">🏛️ Adina Mosque: Architectural Synthesis</h4>
+                    <div class="section-content">
+                        <p>Built in <span class="highlight">1373-1375</span> by Sultan Sikandar Shah of the Bengal Sultanate in Pandua, the Adina Mosque was the <span class="highlight">largest mosque in the Indian subcontinent</span> at its time.</p>
+
+                        <ul class="custom-list">
+                            <li><span class="highlight">387 domed bays</span> and 260 brick pillars</li>
+                            <li>Modeled on the <span class="highlight">Umayyad Mosque of Damascus</span></li>
+                            <li>Combined Bengali, Persian, Arab, and Byzantine elements</li>
+                            <li>Terracotta decorations fused Islamic geometric patterns with Hindu-Buddhist motifs</li>
+                        </ul>
+
+                        <div class="key-fact">
+                            <div class="key-fact-title">🎨 Syncretic Architecture</div>
+                            The mosque reused materials from Hindu-Buddhist temples, and its decoration shows clear continuity with pre-Islamic Bengali art—demonstrating <span class="highlight">cultural synthesis</span> rather than erasure.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card">
+                    <h4 class="section-title">📜 Dara Shikoh: The Philosopher Prince</h4>
+                    <div class="section-content">
+                        <p><span class="highlight">Dara Shikoh</span> (1615–1659), eldest son of Shah Jahan and heir apparent, represented the zenith of Indo-Islamic philosophical synthesis.</p>
+
+                        <div class="key-fact">
+                            <div class="key-fact-title">📖 Majma-ul-Bahrain (1654-55)</div>
+                            "The Confluence of Two Seas"—Dara's treatise demonstrating the mystical and pluralistic affinities between <span class="highlight">Sufism</span> and <span class="highlight">Vedanta</span>.
+                        </div>
+
+                        <p>In 1657, Dara completed the <span class="highlight">Sirr-i-Akbar</span> ("The Greatest Mystery")—a Persian translation of 50 Upanishads. He boldly claimed that the Qur'anic reference to the "hidden book" (Kitab al-maknun) referred to the Upanishads.</p>
+
+                        <p>His loss to Aurangzeb in 1659 is often seen as a turning point—what might have been had the syncretic tradition prevailed over orthodoxy.</p>
+                    </div>
+                </div>
+
+                <div class="section-card">
+                    <h4 class="section-title">⚖️ Fatawa-e-Alamgiri: Orthodox Response</h4>
+                    <div class="section-content">
+                        <p>Aurangzeb's <span class="highlight">Fatawa-e-Alamgiri</span> (completed 1672) represented the opposite impulse—a codification of Hanafi Islamic law compiled by <span class="highlight">500 scholars</span> from South Asia, Iraq, and Hejaz.</p>
+
+                        <ul class="custom-list">
+                            <li>30 volumes of sharia-based law on statecraft, ethics, and justice</li>
+                            <li>Became the legal foundation for colonial-era Muslim law</li>
+                            <li>Re-established ulama prominence lost under Akbar</li>
+                            <li>Created distinct legal categories based on religion</li>
+                        </ul>
+
+                        <p>The contrast between Dara's <span class="highlight">Majma-ul-Bahrain</span> and Aurangzeb's <span class="highlight">Fatawa</span> represents the fundamental tension in Indo-Islamic civilization between synthesis and orthodoxy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="arabesque">❧ ۞ ❧</div>
+
+        <!-- Beyond Class Materials Section -->
+        <div class="beyond-section">
+            <h3 class="beyond-title">✦ Beyond Class Materials: Additional Research ✦</h3>
+            <div class="beyond-grid">
+                <div class="beyond-card">
+                    <h4>🔬 Al-Biruni's Scientific Method</h4>
+                    <p>Al-Biruni pioneered empirical research methods. He used a hydrostatic balance to measure density of metals and gems with remarkable precision. He calculated Earth's radius at Nandana using trigonometry—his result was within 2% of the modern value. His <em>Kitab al-Hind</em> remains a foundational text for understanding medieval Indian society through a Muslim scholar's eyes.</p>
+                </div>
+                
+                <div class="beyond-card">
+                    <h4>🌊 Kerala's Unique Islamic Heritage</h4>
+                    <p>The Mappila Muslims of Kerala developed a distinct syncretic culture: <em>Mappila pattu</em> (songs blending Arabic with Malayalam), <em>Oppana</em> (wedding dances), and architectural styles combining Arab and Dravidian elements. They maintained the Shafi'i madhhab unique in South Asia, directly linked to Yemeni-Hadhrami traders rather than Central Asian influences.</p>
+                </div>
+                
+                <div class="beyond-card">
+                    <h4>📚 Ibn Battuta's Testimony</h4>
+                    <p>The Moroccan traveler Ibn Battuta (1304–1369) visited both the Malabar Coast and Shah Jalal in Sylhet. His <em>Rihla</em> provides invaluable first-hand accounts of 14th-century Islamic South Asia—from the sophisticated trading cities of Kerala to the frontier Sufi spirituality of Bengal. He described Shah Jalal as one of the great saints of the age.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Central Argument / Thesis Box -->
+        <div class="thesis-statement">
+            <p class="thesis-text">
+                <strong>CENTRAL ARGUMENT:</strong> The spread of Islamic philosophy to South Asia was not a monolithic process of conquest and imposition, but a <span class="highlight">multi-layered phenomenon</span> involving peaceful trade, scholarly exchange, mystical spirituality, and political power. The resulting Indo-Islamic civilization produced unique syntheses—from Al-Biruni's comparative studies to Dara Shikoh's philosophical translations—that enriched both Islamic and South Asian intellectual traditions.
+            </p>
+        </div>
+
+        <!-- Footer with Bibliography -->
+        <footer class="poster-footer">
+            <h4 class="bibliography-title">Selected Bibliography & Sources</h4>
+            <div class="bibliography-list">
+                <div class="bib-item">
+                    <strong>Primary Sources:</strong><br>
+                    • Al-Biruni, <em>Kitab al-Hind</em> (c. 1030)<br>
+                    • Dara Shikoh, <em>Majma-ul-Bahrain</em> (1654-55)<br>
+                    • Ibn Battuta, <em>Rihla</em> (14th c.)
+                </div>
+                <div class="bib-item">
+                    <strong>Secondary Sources:</strong><br>
+                    • Richard Eaton, <em>The Rise of Islam and the Bengal Frontier</em><br>
+                    • Jim Al-Khalili, <em>The House of Wisdom</em><br>
+                    • K.N. Chaudhuri, <em>Trade and Civilisation in the Indian Ocean</em>
+                </div>
+                <div class="bib-item">
+                    <strong>Course Materials:</strong><br>
+                    • HIS 101 Lecture Notes (Weeks 1-12)<br>
+                    • Class readings on Umayyad/Abbasid political thought<br>
+                    • Assigned texts on Sufism and Bengal Sultanate
+                </div>
+            </div>
+            <p style="margin-top: 20px; color: #7ec8c8; font-size: 0.85em;">
+                <strong>HIS 101: History of South Asia</strong> | University of Liberal Arts Bangladesh | Poster Project 2024<br>
+                <em>Viva: January 3rd | Submission: January 5th</em>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Add smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
